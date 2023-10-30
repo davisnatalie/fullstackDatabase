@@ -32,14 +32,16 @@ function CreateCharacter() {
         setDebutYear(0);
     }
 
-    function handleOnSubmit(event){
-        if(debutYear >= 0 && debutYear < 2100) {
+ function handleOnSubmit(event){
+        const currentYear = new Date().getFullYear();
+        if (debutYear >=0 && debutYear < currentYear)  {
             event.preventDefault();
         
             postCharacter();
-        } else {
-            alert('Year must be a number')
+        }else{
+            alert('please input a correct year for debut year')
         }
+    }
     }
 
     return ( 
